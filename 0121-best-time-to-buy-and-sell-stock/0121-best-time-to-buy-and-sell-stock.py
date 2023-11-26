@@ -12,8 +12,10 @@ class Solution(object):
 
         for price in prices[1:]:
             # Update the minimum price
-            min_price = min(min_price, price)
+            if price < min_price:
+                min_price = price
             # Update the maximum profit
-            max_profit = max(max_profit, price - min_price)
+            elif price - min_price > max_profit:
+                max_profit = price - min_price
 
         return max_profit
