@@ -7,8 +7,7 @@ class Solution(object):
         if not nums:
             return 0
 
-        max_sum = nums[0]
-        current_sum = nums[0]
+        max_sum = current_sum = nums[0]
 
         for num in nums[1:]:
             # Choose between extending the current subarray or starting a new subarray
