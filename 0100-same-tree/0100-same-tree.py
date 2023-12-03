@@ -5,13 +5,6 @@
 #         self.left = left
 #         self.right = right
 
-# Definition for a binary tree node.
-class TreeNode(object):
-    def __init__(self, val=0, left=None, right=None):
-        self.val = val
-        self.left = left
-        self.right = right
-
 class Solution(object):
     def isSameTree(self, p, q):
         """
@@ -33,17 +26,3 @@ class Solution(object):
 
         # Start the preorder traversal from the roots of both trees
         return preorder(p, q)
-
-# Example usage:
-# Construct the trees
-tree_p = TreeNode(1, TreeNode(2), TreeNode(3))
-tree_q = TreeNode(1, TreeNode(2), TreeNode(3))
-
-# Create an instance of the Solution class
-solution = Solution()
-
-# Check if the trees are the same
-result = solution.isSameTree(tree_p, tree_q)
-
-# Print the result
-print(result)
