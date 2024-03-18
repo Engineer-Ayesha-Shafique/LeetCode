@@ -4,18 +4,15 @@ class Solution(object):
         :type n: int
         :rtype: int
         """
-        if n == 1:
-            return 1
-        if n == 2:
-            return 2
+        if n <= 3: return n
 
-        # Initialize an array to store the number of ways to reach each step
-        ways = [0] * n
-        ways[0] = 1
-        ways[1] = 2
+        prev1 = 3
+        prev2 = 2
+        cur = 0
 
-        # Calculate the number of ways for each step from 3 to n
-        for i in range(2, n):
-            ways[i] = ways[i - 1] + ways[i - 2]
-
-        return ways[n - 1]
+        for _ in range(3, n):
+            cur = prev1 + prev2
+            prev2 = prev1
+            prev1 = cur
+        
+        return cur
