@@ -4,15 +4,13 @@ class Solution(object):
         :type n: int
         :rtype: int
         """
-        a = 0
-        b = 1
-        if n < 2:
-            return int(n)
-        else:
-            for i in range(2, n+1):
-                c = a + b
-                a = b
-                b = c
-            return b
+        if n==0:
+            return 0
+        mem=[0,1]
+
+        for i in range(1,n):
+            mem=[mem[1], mem[1]+mem[0]]
+
+        return mem[-1]
         
         
