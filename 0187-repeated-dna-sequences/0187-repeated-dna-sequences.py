@@ -1,5 +1,3 @@
-from collections import Counter
-
 class Solution(object):
     def findRepeatedDnaSequences(self, dna_sequence):
         """
