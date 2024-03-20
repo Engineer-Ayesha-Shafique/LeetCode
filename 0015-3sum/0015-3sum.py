@@ -4,6 +4,11 @@ class Solution(object):
         :type nums: List[int]
         :rtype: List[List[int]]
         """
+        # Time Complexity: O(n2). 
+        # Use of a nested loop (one for iterating, other for two-pointer technique) brings the time complexity to O(n2).
+        # Auxiliary Space: O(1). 
+        # As no use of additional data structure is used.
+
         # Sort the array to easily skip duplicates
         nums.sort()
 
