@@ -10,19 +10,19 @@ class Solution(object):
         :type l2: ListNode
         :rtype: ListNode
         """
-        dummy = ListNode(0)
-        curr = dummy
-        carry = 0
-
-        while carry or l1 or l2:
-              if l1:
-                    carry += l1.val
-                    l1 = l1.next
-              if l2:
-                    carry += l2.val
-                    l2 = l2.next
-              curr.next = ListNode(carry % 10)
-              carry //= 10
-              curr = curr.next
-
-        return dummy.next
+        pre = head = ListNode()
+        addition = 0
+        
+        while (l1 is not None or l2 is not None or addition > 0):
+            num1 = 0 if l1 is None else l1.val
+            num2 = 0 if l2 is None else l2.val
+            
+            total = num1 + num2 + addition
+            addition = total // 10
+            pre.next = ListNode(val = total % 10)
+            
+            pre = pre.next
+            l1 = None if l1 is None else l1.next
+            l2 = None if l2 is None else l2.next
+            
+        return head.next
